@@ -50,7 +50,7 @@ get_header(); ?>
 
                     <div class="animal-actions">
                         <a href="#adopt-form" class="btn btn-primary btn-lg btn-block"><?php _e('Apply to Adopt', 'pawhaven'); ?></a>
-                        <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn btn-secondary btn-lg btn-block"><?php _e('Sponsor this Friend', 'pawhaven'); ?></a>
+                        <a href="<?php echo esc_url( pawhaven_get_donate_url() ); ?>" class="btn btn-secondary btn-lg btn-block"><?php _e('Sponsor this Friend', 'pawhaven'); ?></a>
                     </div>
                 </div>
 

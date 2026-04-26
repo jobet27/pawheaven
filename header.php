@@ -38,7 +38,7 @@
                     <input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search...', 'placeholder', 'pawhaven' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
                     <button type="submit" class="search-submit">🔍</button>
                 </form>
-                <a href="<?php echo esc_url( home_url( '/donate' ) ); ?>" class="btn-donate"><?php _e( 'Donate Now', 'pawhaven' ); ?></a>
+                <a href="<?php echo esc_url( pawhaven_get_donate_url() ); ?>" class="btn-donate"><?php _e( 'Donate Now', 'pawhaven' ); ?></a>
             </div>
 		</div>
 	</header><!-- #masthead -->

@@ -98,7 +98,7 @@ function pawhaven_default_menu() {
     echo '<li><a href="' . esc_url( home_url( '/' ) ) . '">' . __( 'Home', 'pawhaven' ) . '</a></li>';
     echo '<li><a href="' . get_post_type_archive_link( 'animal' ) . '">' . __( 'Adopt a Friend', 'pawhaven' ) . '</a></li>';
     echo '<li><a href="' . esc_url( home_url( '/success-stories' ) ) . '">' . __( 'Success Stories', 'pawhaven' ) . '</a></li>';
-    echo '<li><a href="' . esc_url( home_url( '/donate' ) ) . '">' . __( 'Support Us', 'pawhaven' ) . '</a></li>';
+    echo '<li><a href="' . esc_url( pawhaven_get_donate_url() ) . '">' . __( 'Support Us', 'pawhaven' ) . '</a></li>';
     echo '</ul>';
 }
 
@@ -153,3 +153,26 @@ add_filter( 'show_admin_bar', function( $show ) {
 	}
 	return $show;
 });
+
+/**
+ * 7. UTILITY FUNCTIONS
+ */
+
+/**
+ * Get the Donate page URL dynamically
+ */
+function pawhaven_get_donate_url() {
+    // Try to find the page by template
+    $donate_page = get_pages(array(
+        'meta_key' => '_wp_page_template',
+        'meta_value' => 'page-donate.php',
+        'number' => 1
+    ));
+
+    if (!empty($donate_page)) {
+        return get_permalink($donate_page[0]->ID);
+    }
+
+    // Fallback to slug if template not found
+    return home_url('/donate');
+}

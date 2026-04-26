@@ -56,11 +56,11 @@ get_header(); ?>
                     <div class="form-group mb-6">
                         <label><?php _e('Select Amount', 'pawhaven'); ?></label>
                         <div class="amount-grid">
-                            <button type="button" class="btn-amount" data-value="250">₱250</button>
-                            <button type="button" class="btn-amount" data-value="500">₱500</button>
-                            <button type="button" class="btn-amount is-active" data-value="1000">₱1,000</button>
-                            <button type="button" class="button type="button" class="btn-amount" data-value="2000">₱2,000</button>
-                            <input type="number" name="custom_amount" placeholder="<?php _e('Other', 'pawhaven'); ?>" class="input-custom-amount">
+                            <button type="button" class="btn-amount donation-tier-btn" data-amount="250">₱250</button>
+                            <button type="button" class="btn-amount donation-tier-btn" data-amount="500">₱500</button>
+                            <button type="button" class="btn-amount donation-tier-btn is-active" data-amount="1000">₱1,000</button>
+                            <button type="button" class="btn-amount donation-tier-btn" data-amount="2000">₱2,000</button>
+                            <input type="number" id="donation-custom-amount" name="custom_amount" placeholder="<?php _e('Other', 'pawhaven'); ?>" class="input-custom-amount">
                         </div>
                     </div>
 
@@ -78,8 +78,10 @@ get_header(); ?>
                         <label><?php _e('Dedication (Optional)', 'pawhaven'); ?></label>
                         <textarea name="dedication" placeholder="<?php _e('In honor of...', 'pawhaven'); ?>"></textarea>
                     </div>
+                    
+                    <div id="donation-impact-message" class="mb-6 text-sm text-gray-600 font-medium italic"></div>
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-block"><?php _e('Proceed to Payment', 'pawhaven'); ?></button>
+                    <button type="submit" id="donation-submit-btn" class="btn btn-primary btn-lg btn-block"><?php _e('Proceed to Payment', 'pawhaven'); ?></button>
                 </form>
                 <div id="donation-response"></div>
             </div>

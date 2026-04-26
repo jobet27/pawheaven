@@ -147,7 +147,7 @@ get_header(); ?>
         </div>
 
         <div class="text-center mt-12">
-            <a href="<?php echo esc_url( home_url('/donate') ); ?>" class="btn btn-primary btn-lg"><?php _e('Support Our Mission', 'pawhaven'); ?></a>
+            <a href="<?php echo esc_url( pawhaven_get_donate_url() ); ?>" class="btn btn-primary btn-lg"><?php _e('Support Our Mission', 'pawhaven'); ?></a>
         </div>
     </div>
 </section>

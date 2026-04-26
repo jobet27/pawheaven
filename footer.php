@@ -27,7 +27,7 @@
 				<h3 class="footer-title"><?php _e('Quick Links', 'pawhaven'); ?></h3>
 				<ul>
 					<li><a href="<?php echo get_post_type_archive_link( 'animal' ); ?>"><?php _e('Adopt a Pet', 'pawhaven'); ?></a></li>
-					<li><a href="<?php echo esc_url( home_url( '/donate' ) ); ?>"><?php _e('Make a Donation', 'pawhaven'); ?></a></li>
+					<li><a href="<?php echo esc_url( pawhaven_get_donate_url() ); ?>"><?php _e('Make a Donation', 'pawhaven'); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/volunteer' ) ); ?>"><?php _e('Volunteer', 'pawhaven'); ?></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/success-stories' ) ); ?>"><?php _e('Success Stories', 'pawhaven'); ?></a></li>
 				</ul>
