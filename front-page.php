@@ -122,25 +122,25 @@ get_header(); ?>
         <div class="impact-tiers-grid">
             <div class="tier-card animate-on-scroll">
                 <div class="tier-icon">🦴</div>
-                <div class="tier-amount">$10</div>
+                <div class="tier-amount">₱100</div>
                 <h3 class="tier-title"><?php _e('Daily Kibble & Treats', 'pawhaven'); ?></h3>
                 <p class="tier-desc"><?php _e('Provides high-protein nutrition and healthy rewards for a rescue dog or cat.', 'pawhaven'); ?></p>
             </div>
             <div class="tier-card animate-on-scroll">
                 <div class="tier-icon">🐾</div>
-                <div class="tier-amount">$25</div>
+                <div class="tier-amount">₱500</div>
                 <h3 class="tier-title"><?php _e('Comfort Pet Bed', 'pawhaven'); ?></h3>
                 <p class="tier-desc"><?php _e('Ensures a durable, warm, and orthopedic bed for a resident to call their own.', 'pawhaven'); ?></p>
             </div>
             <div class="tier-card animate-on-scroll">
                 <div class="tier-icon">🩺</div>
-                <div class="tier-amount">$50</div>
+                <div class="tier-amount">₱1,000</div>
                 <h3 class="tier-title"><?php _e('Essential Vet Care', 'pawhaven'); ?></h3>
                 <p class="tier-desc"><?php _e('Covers critical puppy/kitten vaccinations and a full health check-up.', 'pawhaven'); ?></p>
             </div>
             <div class="tier-card animate-on-scroll">
                 <div class="tier-icon">🐕</div>
-                <div class="tier-amount">$100</div>
+                <div class="tier-amount">₱2,500</div>
                 <h3 class="tier-title"><?php _e('Animal Haven Sponsorship', 'pawhaven'); ?></h3>
                 <p class="tier-desc"><?php _e('Supports a full week of toys, behavioral enrichment, and a safe home for one pet.', 'pawhaven'); ?></p>
             </div>

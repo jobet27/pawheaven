@@ -1,81 +1,90 @@
 <?php
 /**
- * Template Name: Donation Page
+ * Template Name: Donate Now Page
  */
 
 get_header(); ?>
 
-<section class="page-hero hero-donate">
-    <div class="container text-center animate-on-scroll">
-        <h1 class="page-title"><?php _e('Make a Difference', 'pawhaven'); ?></h1>
-        <p class="hero-subtitle"><?php _e('Your contribution directly supports our rescue and rehabilitation efforts.', 'pawhaven'); ?></p>
-    </div>
-</section>
-
-<div class="container container-donate-flow">
-    <div class="donation-grid grid-2-cols">
-        
-        <!-- Left: Donation Form -->
-        <div class="donation-card donation-form-wrapper animate-on-scroll">
-            <h2 class="section-title"><?php _e('One-Time Donation', 'pawhaven'); ?></h2>
-            <p class="section-desc"><?php _e('Choose an amount to support our mission.', 'pawhaven'); ?></p>
-            
-            <form id="donation-form" class="donation-form" data-campaign-id="1">
-                <?php wp_nonce_field( 'pawhaven_donation', '_wpnonce' ); ?>
-                
-                <div class="donation-tiers grid-3-cols">
-                    <button type="button" class="donation-tier-btn" data-amount="100">₱100</button>
-                    <button type="button" class="donation-tier-btn is-active" data-amount="500">₱500</button>
-                    <button type="button" class="donation-tier-btn" data-amount="1000">₱1000</button>
-                </div>
-
-                <div class="custom-amount-group">
-                    <label for="donation-custom-amount"><?php _e('Custom Amount (₱)', 'pawhaven'); ?></label>
-                    <input type="number" id="donation-custom-amount" name="amount" value="500" min="50">
-                </div>
-
-                <div id="donation-impact-message" class="donation-impact">
-                    <!-- Updated via donation.js -->
-                </div>
-
-                <button type="submit" id="donation-submit-btn" class="btn btn-primary btn-lg btn-block">
-                    <?php _e('Complete Donation', 'pawhaven'); ?>
-                </button>
-
-                <p class="donation-note">
-                    <?php _e('Secure payment processing. All donations are tax-deductible.', 'pawhaven'); ?>
-                </p>
-            </form>
-        </div>
-
-        <!-- Right: Campaign Progress & Impact -->
-        <div class="donation-sidebar animate-on-scroll">
-            <div class="campaign-progress-card">
-                <h3 class="card-title"><?php _e('Seasonal Food Fund', 'pawhaven'); ?></h3>
-                <div class="progress-meta">
-                    <span class="progress-amount"><strong>₱4,500</strong> raised</span>
-                    <span class="progress-target">of ₱10,000 goal</span>
-                </div>
-                <div class="donation-progress-bar">
-                    <div class="donation-progress-fill" data-percent="45"></div>
-                </div>
-                <p class="campaign-desc">
-                    <?php _e('We are stocking up on high-quality nutrition for the upcoming winter months. Help us fill the pantry.', 'pawhaven'); ?>
-                </p>
-            </div>
-
-            <div class="impact-stats-card">
-                <h3 class="card-title"><?php _e('Your Impact Last Year', 'pawhaven'); ?></h3>
-                <ul class="impact-list">
-                    <li>🐕 <strong>150+</strong> Dogs found forever homes</li>
-                    <li>🐈 <strong>220+</strong> Cats rescued and rehabilitated</li>
-                    <li>🏥 <strong>₱45k+</strong> In medical bills covered by donors</li>
-                </ul>
-            </div>
-        </div>
-
+<div class="donate-page-hero">
+    <div class="container text-center">
+        <h1 class="hero-title animate-on-scroll"><?php _e('Every Donation Saves a Life.', 'pawhaven'); ?></h1>
+        <p class="hero-desc animate-on-scroll"><?php _e('Your contribution directly supports our mission to rescue, rehabilitate, and rehome animals in need.', 'pawhaven'); ?></p>
     </div>
 </div>
 
-<?php
-get_footer();
+<div class="container py-20">
+    <div class="grid-2-cols gap-16">
+        <!-- Donation Content -->
+        <div class="donate-content-area animate-on-scroll">
+            <h2 class="sidebar-title mb-6"><?php _e('Choose Your Impact', 'pawhaven'); ?></h2>
+            <p class="mb-10"><?php _e('Since 1995, PawHaven has relied on the kindness of people like you to keep our doors open and our residents thriving.', 'pawhaven'); ?></p>
+            
+            <div class="impact-tiers-small">
+                <div class="tier-item">
+                    <span class="tier-icon">🦴</span>
+                    <div>
+                        <strong>₱100 - <?php _e('Nutrition Pack', 'pawhaven'); ?></strong>
+                        <p><?php _e('High-quality meals for 3 dogs for a full day.', 'pawhaven'); ?></p>
+                    </div>
+                </div>
+                <div class="tier-item">
+                    <span class="tier-icon">🐾</span>
+                    <div>
+                        <strong>₱500 - <?php _e('Comfort Bundle', 'pawhaven'); ?></strong>
+                        <p><?php _e('Warm bedding and a new toy for a rescue kitten.', 'pawhaven'); ?></p>
+                    </div>
+                </div>
+                <div class="tier-item">
+                    <span class="tier-icon">🩺</span>
+                    <div>
+                        <strong>₱1,000 - <?php _e('Medical Care', 'pawhaven'); ?></strong>
+                        <p><?php _e('Essential vaccinations and health screening.', 'pawhaven'); ?></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-badge mt-10 p-6 bg-soft-cream rounded-xl">
+                 <h3>🛡️ <?php _e('Secure Donation', 'pawhaven'); ?></h3>
+                 <p><?php _e('All transactions are encrypted and secure. We respect your privacy and will never share your information.', 'pawhaven'); ?></p>
+            </div>
+        </div>
+
+        <!-- Donation Form -->
+        <div class="donate-form-area animate-on-scroll">
+            <div class="donate-card p-10 bg-white shadow-xl rounded-3xl border border-gray-100">
+                <form id="donation-form" class="pro-form">
+                    <div class="form-group mb-6">
+                        <label><?php _e('Select Amount', 'pawhaven'); ?></label>
+                        <div class="amount-grid">
+                            <button type="button" class="btn-amount" data-value="250">₱250</button>
+                            <button type="button" class="btn-amount" data-value="500">₱500</button>
+                            <button type="button" class="btn-amount is-active" data-value="1000">₱1,000</button>
+                            <button type="button" class="button type="button" class="btn-amount" data-value="2000">₱2,000</button>
+                            <input type="number" name="custom_amount" placeholder="<?php _e('Other', 'pawhaven'); ?>" class="input-custom-amount">
+                        </div>
+                    </div>
+
+                    <div class="form-group mb-6">
+                        <label><?php _e('Full Name', 'pawhaven'); ?></label>
+                        <input type="text" name="donor_name" required>
+                    </div>
+
+                    <div class="form-group mb-6">
+                        <label><?php _e('Email Address', 'pawhaven'); ?></label>
+                        <input type="email" name="donor_email" required>
+                    </div>
+
+                    <div class="form-group mb-8">
+                        <label><?php _e('Dedication (Optional)', 'pawhaven'); ?></label>
+                        <textarea name="dedication" placeholder="<?php _e('In honor of...', 'pawhaven'); ?>"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block"><?php _e('Proceed to Payment', 'pawhaven'); ?></button>
+                </form>
+                <div id="donation-response"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php get_footer(); ?>

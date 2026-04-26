@@ -807,7 +807,117 @@ img {
     .impact-tiers-grid { grid-template-columns: 1fr; }
 }
 
-/* --- 10. ANIMATIONS --- */
+/* --- 11. DONATE PAGE --- */
+.donate-page-hero {
+    background: #1e3a24;
+    padding: var(--space-20) 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.donate-page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('assets/images/hero.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    filter: blur(4px);
+}
+
+.donate-page-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.impact-tiers-small {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.tier-item {
+    display: flex;
+    gap: var(--space-5);
+    align-items: center;
+    padding: var(--space-4);
+    background: white;
+    border-radius: var(--radius-xl);
+    border: 1px solid #f0f0f0;
+}
+
+.tier-item .tier-icon {
+    font-size: 2rem;
+    background: #fdfaf5;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.amount-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr;
+    gap: var(--space-3);
+    margin-top: var(--space-3);
+}
+
+.btn-amount {
+    background: #fdfaf5;
+    border: 2px solid #aec4b4;
+    color: #1e3a24;
+    padding: 0.75rem;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-amount.is-active, .btn-amount:hover {
+    background: #1e3a24;
+    color: white;
+    border-color: #1e3a24;
+}
+
+.input-custom-amount {
+    background: #fdfaf5;
+    border: 2px solid #aec4b4;
+    border-radius: 12px;
+    padding: 0.75rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.pro-form label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--color-text-heading);
+}
+
+.pro-form input, .pro-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.pro-form input:focus, .pro-form textarea:focus {
+    outline: none;
+    border-color: #108585;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(16, 133, 133, 0.05);
+}
+
+/* --- 12. ANIMATIONS --- */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(30px);
